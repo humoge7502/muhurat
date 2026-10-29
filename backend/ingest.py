@@ -174,6 +174,10 @@ def fetch_opportunitydesk(client: httpx.Client) -> tuple[list[dict[str, Any]], s
             continue
         title = entry.get("title", "").strip()
         excerpt = re.sub(r"<[^>]+>", " ", entry.get("summary", ""))[:280].strip()
+        # RSS summaries carry HTML entities; the UI renders plain text.
+        import html as _html
+
+        excerpt = _html.unescape(excerpt)
         hint = _DATE_HINT.search(excerpt) or _DATE_HINT.search(title)
         deadline = ""
         if hint:

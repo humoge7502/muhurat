@@ -1,43 +1,132 @@
 @import "tailwindcss";
 
+@theme {
+  --color-void: #05060b;
+  --color-panel: #0b0d15;
+  --color-edge: rgba(148, 163, 184, 0.14);
+  --color-cyan-rail: #22d3ee;
+  --color-violet-rail: #a78bfa;
+  --color-amber-rail: #fbbf24;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
 html {
   color-scheme: dark;
 }
 
 body {
+  /* Flat void. One restrained top glow — no blobs, no purple wash. */
   background:
-    radial-gradient(60rem 30rem at 15% -10%, rgba(139, 92, 246, 0.16), transparent 60%),
-    radial-gradient(50rem 26rem at 85% -5%, rgba(34, 211, 238, 0.12), transparent 55%),
-    radial-gradient(40rem 22rem at 50% 110%, rgba(245, 158, 11, 0.08), transparent 60%),
-    #07080d;
-  background-attachment: fixed;
-  color: #e4e4e7;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent 220px),
+    #05060b;
+  color: #d4d4d8;
+  font-family: "Inter", system-ui, sans-serif;
   min-height: 100dvh;
+  font-feature-settings: "tnum";
 }
 
-.aurora-text {
-  background: linear-gradient(92deg, #a78bfa 0%, #22d3ee 55%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.font-display {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+.font-mono2 {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
+/* ---- ticker tape ---- */
+.ticker {
+  overflow: hidden;
+  border-block: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(11, 13, 21, 0.7);
+}
+.ticker__track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-scroll 42s linear infinite;
+}
+.ticker:hover .ticker__track {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.glass-hover {
+/* ---- cards: hairline ledger panels with a type rail ---- */
+.panel {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.012));
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 14px;
   transition:
-    border-color 200ms ease,
-    transform 200ms ease,
-    background 200ms ease;
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
-.glass-hover:hover {
-  border-color: rgba(167, 139, 250, 0.45);
-  background: rgba(255, 255, 255, 0.055);
+.panel:hover {
+  transform: translateY(-3px);
+  border-color: rgba(148, 163, 184, 0.3);
+  box-shadow: 0 18px 50px -18px rgba(0, 0, 0, 0.85);
+}
+.panel__rail {
+  position: absolute;
+  inset-block: 14px;
+  left: 0;
+  width: 2px;
+  border-radius: 2px;
+  opacity: 0.65;
+  transition: opacity 220ms ease, box-shadow 220ms ease;
+}
+.panel:hover .panel__rail {
+  opacity: 1;
+  box-shadow: 0 0 14px 1px currentColor;
+}
+.rail-cyan {
+  background: #22d3ee;
+  color: #22d3ee;
+}
+.rail-violet {
+  background: #a78bfa;
+  color: #a78bfa;
+}
+.rail-amber {
+  background: #fbbf24;
+  color: #fbbf24;
+}
+
+/* ---- countdown ring ---- */
+.ring-track {
+  stroke: rgba(148, 163, 184, 0.18);
+}
+.ring-arc {
+  transition: stroke-dashoffset 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ---- skeleton pulse ---- */
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.skeleton {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
+
+/* ---- small-caps label ---- */
+.label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #71717a;
 }
 
 ::-webkit-scrollbar {
@@ -45,8 +134,12 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(148, 163, 184, 0.16);
   border-radius: 8px;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,24 +147,28 @@ body {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-/* driver.js tour, themed to the aurora system */
+/* driver.js tour themed to the launch-clock */
 .driver-popover-muhurat {
-  background: #12141d;
-  border: 1px solid rgba(167, 139, 250, 0.4);
-  color: #e4e4e7;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  background: #0b0d15;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  color: #d4d4d8;
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
+  font-family: "Inter", system-ui, sans-serif;
 }
 .driver-popover-muhurat .driver-popover-title {
+  font-family: "Space Grotesk", system-ui, sans-serif;
   font-weight: 700;
-  color: #a78bfa;
+  color: #67e8f9;
 }
 .driver-popover-muhurat .driver-popover-description {
   color: #a1a1aa;
+  font-size: 13px;
 }
 .driver-popover-muhurat button {
   color: #22d3ee;
