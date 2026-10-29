@@ -1,0 +1,13 @@
+{
+  "name": "Muhurat — never miss your moment",
+  "short_name": "Muhurat",
+  "description": "Real contests, hackathons and scholarships with the deadlines that matter. Every item sourced and snapshotted.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080d",
+  "theme_color": "#07080d",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

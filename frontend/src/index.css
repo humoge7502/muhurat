@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(60rem 30rem at 15% -10%, rgba(139, 92, 246, 0.16), transparent 60%),
+    radial-gradient(50rem 26rem at 85% -5%, rgba(34, 211, 238, 0.12), transparent 55%),
+    radial-gradient(40rem 22rem at 50% 110%, rgba(245, 158, 11, 0.08), transparent 60%),
+    #07080d;
+  background-attachment: fixed;
+  color: #e4e4e7;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  min-height: 100dvh;
+}
+
+.aurora-text {
+  background: linear-gradient(92deg, #a78bfa 0%, #22d3ee 55%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.glass-hover {
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease,
+    background 200ms ease;
+}
+.glass-hover:hover {
+  border-color: rgba(167, 139, 250, 0.45);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* driver.js tour, themed to the aurora system */
+.driver-popover-muhurat {
+  background: #12141d;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #e4e4e7;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.driver-popover-muhurat .driver-popover-title {
+  font-weight: 700;
+  color: #a78bfa;
+}
+.driver-popover-muhurat .driver-popover-description {
+  color: #a1a1aa;
+}
+.driver-popover-muhurat button {
+  color: #22d3ee;
+  text-shadow: none;
+}
