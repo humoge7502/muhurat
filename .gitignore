@@ -1,6 +1,7 @@
 node_modules/
 dist/
 data/muhurat.db*
+data/vapid.json
 __pycache__/
 .pytest_cache/
 *.pyc
