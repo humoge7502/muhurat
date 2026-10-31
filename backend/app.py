@@ -30,6 +30,39 @@ app.add_middleware(
 @app.on_event("startup")
 def startup() -> None:
     ingest.start_background_refresh()
+    import push as push_module
+
+    push_module.get_or_create_vapid()
+
+
+@app.get("/api/push/public-key")
+def push_public_key() -> dict[str, Any]:
+    """The VAPID application server key for pushManager.subscribe()."""
+    import push as push_module
+
+    return {"public_key": push_module.get_or_create_vapid()["public"]}
+
+
+@app.post("/api/push/subscribe")
+def push_subscribe(subscription: dict[str, Any]) -> dict[str, Any]:
+    """Store a browser push subscription (endpoint + p256dh/auth keys)."""
+    import push as push_module
+
+    try:
+        endpoint = subscription["endpoint"]
+        keys = subscription["keys"]
+        push_module.subscribe(endpoint, keys["p256dh"], keys["auth"])
+    except (KeyError, TypeError) as exc:
+        raise HTTPException(status_code=400, detail=f"malformed subscription: {exc}") from exc
+    return {"ok": True}
+
+
+@app.post("/api/push/dispatch")
+def push_dispatch(hours: int = 48) -> dict[str, Any]:
+    """Send deadline warnings to all subscribers (idempotent per item)."""
+    import push as push_module
+
+    return push_module.dispatch_deadline_warnings(hours=min(max(hours, 1), 336))
 
 
 @app.get("/api/health")

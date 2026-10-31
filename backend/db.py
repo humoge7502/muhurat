@@ -51,6 +51,18 @@ CREATE TABLE IF NOT EXISTS source_status (
     last_count INTEGER,
     last_error TEXT
 );
+CREATE TABLE IF NOT EXISTS push_subscriptions (
+    endpoint TEXT PRIMARY KEY,
+    p256dh TEXT NOT NULL,
+    auth TEXT NOT NULL,
+    created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS push_sent (
+    endpoint TEXT NOT NULL,
+    item_id TEXT NOT NULL,
+    sent_at TEXT NOT NULL,
+    PRIMARY KEY (endpoint, item_id)
+);
 """
 
 

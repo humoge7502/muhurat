@@ -2,6 +2,7 @@ import { driver } from "driver.js";
 import {
   AlarmClockPlus,
   ArrowUpRight,
+  BellRing,
   CalendarDays,
   Compass,
   GraduationCap,
@@ -174,6 +175,28 @@ export default function App(): React.JSX.Element {
     }
   }, []);
 
+  const enablePush = useCallback(async () => {
+    if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
+      alert("This browser does not support push updates.");
+      return;
+    }
+    const permission = await Notification.requestPermission();
+    if (permission !== "granted") return;
+    const registration = await navigator.serviceWorker.ready;
+    const { public_key } = await fetch("/api/push/public-key").then((r) => r.json());
+    const subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: public_key,
+    });
+    await fetch("/api/push/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(subscription.toJSON()),
+    });
+    await fetch("/api/push/dispatch", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+    alert("Push updates enabled — you will be notified as deadlines approach.");
+  }, []);
+
   const savedItems = useMemo(() => items.filter((item) => saved.includes(item.id)), [items, saved]);
   const icsHref = `/api/ics?ids=${encodeURIComponent(saved.join(","))}`;
 
@@ -275,6 +298,14 @@ export default function App(): React.JSX.Element {
           </button>
           <button onClick={startTour} className="label rounded-lg border border-white/10 px-3 py-1.5 hover:text-zinc-300">
             tour
+          </button>
+          <button
+            id="enable-push"
+            onClick={enablePush}
+            className="flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition hover:border-violet-400/40 hover:text-violet-300"
+          >
+            <BellRing className="h-3.5 w-3.5" />
+            <span className="hidden text-xs sm:inline">updates</span>
           </button>
         </div>
         {/* ticker tape */}
