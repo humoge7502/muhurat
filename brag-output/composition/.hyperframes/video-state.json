@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "historyId": "fe0f262d-e768-4f97-b3b5-42c82b94e974",
+  "currentRevision": "d0b4b976-060a-435e-8fe7-1b4234256b4d",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\1b\\1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "CLAUDE.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\1b\\1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "assets/app-reminders.png": {
+      "hash": "958c5fef25fafd4e12b0bc1c206e05714c664d3806ab1c5302411187ce5e57f8",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\95\\958c5fef25fafd4e12b0bc1c206e05714c664d3806ab1c5302411187ce5e57f8"
+    },
+    "assets/app-tour.png": {
+      "hash": "940d6895f7dffb47d728dcfc7cc9a6f72b65031cced83f8baae21f81bc2e2372",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\94\\940d6895f7dffb47d728dcfc7cc9a6f72b65031cced83f8baae21f81bc2e2372"
+    },
+    "assets/app-v2-cards.png": {
+      "hash": "deda94e8d7868c9fae2e5f29c83f08e7ec16f275b03cada176d3e6f9b68e05ec",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\de\\deda94e8d7868c9fae2e5f29c83f08e7ec16f275b03cada176d3e6f9b68e05ec"
+    },
+    "assets/app-v2-top.png": {
+      "hash": "c93a34741108dbacecd2ada213eba45e98d52575b96472000ab22e270d276620",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\c9\\c93a34741108dbacecd2ada213eba45e98d52575b96472000ab22e270d276620"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\53\\53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "47ff250604b6bede2843a65f52f731167d97afe0f5c02fe505cc74695d399e12",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\47\\47ff250604b6bede2843a65f52f731167d97afe0f5c02fe505cc74695d399e12"
+    },
+    "meta.json": {
+      "hash": "5ec66a76d0273aae72a773cf7f7389c475c9f0119f0570bf28f0d64e63d576b2",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\5e\\5ec66a76d0273aae72a773cf7f7389c475c9f0119f0570bf28f0d64e63d576b2"
+    },
+    "package.json": {
+      "hash": "c583a10e93f2e0cbd46875ba46623abb2834bb925e86a5f2c25eba6c48f32c7f",
+      "content": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\c5\\c583a10e93f2e0cbd46875ba46623abb2834bb925e86a5f2c25eba6c48f32c7f"
+    }
+  },
+  "revisions": {
+    "ada98afc-df94-4d66-8f0c-c4bb0ea96464": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793467757323,
+      "endedAt": 1793467757327,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\39\\396a74d12dbbfd547d66a074dc5bba73896dd1a7eecb7d3e12dc06e6bf970493",
+          "after": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\64\\640878954260bee551789999bec6f6fca1584e61963fcc47d41e4623a477fbc4"
+        }
+      }
+    },
+    "d0b4b976-060a-435e-8fe7-1b4234256b4d": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793467823508,
+      "endedAt": 1793467823511,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\64\\640878954260bee551789999bec6f6fca1584e61963fcc47d41e4623a477fbc4",
+          "after": "C:\\Users\\Devesh tiwari\\.cache\\hyperframes\\history\\fe0f262d-e768-4f97-b3b5-42c82b94e974\\blobs\\47\\47ff250604b6bede2843a65f52f731167d97afe0f5c02fe505cc74695d399e12"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "d0b4b976-060a-435e-8fe7-1b4234256b4d",
+      "id": "85f02fc1-6628-4436-990a-5952b627b999"
+    },
+    "revisions": {
+      "ada98afc-df94-4d66-8f0c-c4bb0ea96464": [
+        {
+          "id": "3fa20462-fc8c-4028-9db2-c464e54076e4",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793467780275,
+          "contentHash": "6275aed652516df1ccabf033d0b6d546f97eb96487e94cd16c57955c1b682c46",
+          "revision": "ada98afc-df94-4d66-8f0c-c4bb0ea96464",
+          "inputFingerprint": "df6ca86227d99945e3f03d4a6bba0fa384d176a60e9b456c5eed6d07fbbfb2bf",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8d98ba08-1e89-4402-bf50-63f391402c07"
+        }
+      ],
+      "d0b4b976-060a-435e-8fe7-1b4234256b4d": [
+        {
+          "id": "85f02fc1-6628-4436-990a-5952b627b999",
+          "scope": "project",
+          "report": "C:\\Users\\Devesh tiwari\\OneDrive\\Documents\\Trae\\default\\muhurat\\brag-output\\composition\\.hyperframes\\artifacts\\checks\\85f02fc1-6628-4436-990a-5952b627b999.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793467848457,
+          "contentHash": "769b80644da0700d74c9fac05ad49532ec6862898d87aea1466c70b2f27ab609",
+          "revision": "d0b4b976-060a-435e-8fe7-1b4234256b4d",
+          "inputFingerprint": "725c476e7caf2eebc04f62836294e1ee0aafa0e489bb8b3001025661c6d923ae",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "9429fabb-dc8d-4eef-ad62-b74260a5adeb",
+        "scope": "project",
+        "report": "C:\\Users\\Devesh tiwari\\OneDrive\\Documents\\Trae\\default\\muhurat\\brag-output\\composition\\.hyperframes\\artifacts\\checks\\9429fabb-dc8d-4eef-ad62-b74260a5adeb.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 10000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793467618129,
+        "contentHash": "46be9f4050628e0d62c185932a95b62e6aef121b0f18ed972b8e8d41cd092192",
+        "revision": null,
+        "inputFingerprint": "9856bfcd4a1822b7928000ed2edd3cdb24a904e16309ec2f38afa0e966d50c4c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "8d98ba08-1e89-4402-bf50-63f391402c07",
+      "completedAt": 1793467987001,
+      "output": "C:\\Users\\Devesh tiwari\\OneDrive\\Documents\\Trae\\default\\muhurat\\brag-output\\composition\\renders\\composition_2026-10-31_23-01-16.mp4",
+      "status": "completed",
+      "revision": "d0b4b976-060a-435e-8fe7-1b4234256b4d"
+    },
+    "retainedRevisions": [
+      "d0b4b976-060a-435e-8fe7-1b4234256b4d"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

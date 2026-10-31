@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ground: #05060b;
+        --ink: #d4d4d8;
+        --cyan: #22d3ee;
+        --violet: #a78bfa;
+        --amber: #fbbf24;
+        --edge: rgba(148, 163, 184, 0.16);
+        --font-display: "Space Grotesk", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px; height: 1080px; overflow: hidden;
+        background: var(--ground); color: var(--ink);
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      #root { position: relative; width: 100%; height: 100%; }
+      .clip { position: absolute; inset: 0; }
+      .scene { position: absolute; inset: 0; display: grid; place-items: center; }
+
+      .hook-line {
+        font-family: var(--font-mono); font-size: 54px; line-height: 1.5;
+        color: #a1a1aa; text-align: center; max-width: 1400px;
+      }
+      .hook-line .ch { display: inline-block; opacity: 0; }
+      .hook-line .em { color: var(--cyan); }
+
+      .wordmark {
+        font-family: var(--font-display); font-weight: 700; font-size: 150px;
+        letter-spacing: 0.22em; color: #f4f4f5; text-align: center;
+      }
+      .wordmark-sub {
+        font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.3em;
+        text-transform: uppercase; color: #9494a0; text-align: center; margin-top: 26px;
+      }
+      .tape {
+        position: absolute; left: 0; right: 0; bottom: 140px;
+        border-block: 1px solid var(--edge); padding: 18px 0; overflow: hidden;
+      }
+      .tape__inner {
+        display: inline-flex; white-space: nowrap;
+        font-family: var(--font-mono); font-size: 24px; color: #a1a1aa;
+      }
+      .tape__inner .t-time { color: var(--cyan); margin-right: 18px; }
+      .tape__inner .t-sep { color: #6b6b76; margin: 0 34px; }
+
+      .shot { position: absolute; inset: 0; overflow: hidden; }
+      .shot img { position: absolute; width: 1920px; }
+      .scene-kicker {
+        position: absolute; top: 90px; left: 0; right: 0; text-align: center;
+        font-family: var(--font-mono); font-size: 26px; letter-spacing: 0.28em;
+        text-transform: uppercase; color: #67e8f9; z-index: 2;
+      }
+
+      .proof { display: grid; place-items: center; gap: 34px; text-align: center; }
+      .proof .big {
+        font-family: var(--font-display); font-size: 84px; font-weight: 700;
+        color: #f4f4f5; letter-spacing: -0.02em;
+      }
+      .proof .fine {
+        font-family: var(--font-mono); font-size: 26px; color: #71717a; letter-spacing: 0.12em;
+      }
+      .proof .fine .no-keys { color: var(--amber); }
+      .chip-row { display: flex; gap: 26px; justify-content: center; }
+      .chip {
+        font-family: var(--font-mono); font-size: 22px; padding: 14px 30px;
+        border: 1px solid var(--edge); border-radius: 12px; color: #a1a1aa;
+      }
+
+      .endcard { display: grid; place-items: center; gap: 30px; text-align: center; }
+      .endcard .wm {
+        font-family: var(--font-display); font-weight: 700; font-size: 170px;
+        letter-spacing: 0.24em; color: #f4f4f5;
+      }
+      .endcard .tag { font-family: var(--font-display); font-size: 40px; color: #a1a1aa; }
+      .endcard .tag em {
+        font-style: normal;
+        background: linear-gradient(92deg, #a78bfa, #22d3ee 55%, #fbbf24);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .endcard .url { font-family: var(--font-mono); font-size: 24px; color: #67e8f9; letter-spacing: 0.1em; }
+      .endcard .rule { width: 520px; height: 1px; background: var(--edge); }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="18"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="clip scene" data-start="0" data-duration="2.6" data-track-index="0">
+        <p class="hook-line" id="hook">
+          You didn't miss it.<br />You just <span class="em">never saw it</span>.
+        </p>
+      </div>
+
+      <div class="clip" data-start="2.5" data-duration="2.6" data-track-index="0">
+        <div class="scene">
+          <div>
+            <div class="wordmark" id="wm">MUHURAT</div>
+            <div class="wordmark-sub" id="wm-sub">opportunity launch clock</div>
+          </div>
+        </div>
+        <div class="tape" id="tape">
+          <div class="tape__inner" id="tape-inner">
+            <span><span class="t-time">5d 4h</span> Heinrich Böll Feminist Futures Fellowship <span class="t-sep">✦</span></span>
+            <span><span class="t-time">6d 19h</span> Educational Codeforces Round 196 <span class="t-sep">✦</span></span>
+            <span><span class="t-time">82d</span> Cosmo Hacks 2026 <span class="t-sep">✦</span></span>
+            <span><span class="t-time">99d</span> HackTitan <span class="t-sep">✦</span></span>
+            <span><span class="t-time">106d</span> DeveloperWeek 2027 <span class="t-sep">✦</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="clip" data-start="5" data-duration="4" data-track-index="0">
+        <div class="scene-kicker" id="s3-kicker">real contests · hackathons · scholarships</div>
+        <div class="shot" id="s3-shot">
+          <img src="assets/app-v2-top.png" id="s3-img" alt="" />
+        </div>
+      </div>
+
+      <div class="clip" data-start="9" data-duration="3" data-track-index="0">
+        <div class="scene proof">
+          <div class="big">every item links to its source.</div>
+          <div class="fine">live from public sources · snapshotted · <span class="no-keys">no keys, no simulation</span></div>
+          <div class="chip-row" id="chips">
+            <span class="chip">codeforces · 9 live</span>
+            <span class="chip">devpost · 9 live</span>
+            <span class="chip">opportunitydesk · 10 live</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="clip" data-start="12" data-duration="3" data-track-index="0">
+        <div class="scene-kicker" id="s5-kicker">reminders that reach your phone</div>
+        <div class="shot" id="s5-shot">
+          <img src="assets/app-reminders.png" id="s5-img" alt="" />
+        </div>
+      </div>
+
+      <div class="clip" data-start="15" data-duration="3" data-track-index="0">
+        <div class="scene endcard">
+          <div class="wm" id="end-wm">MUHURAT</div>
+          <div class="rule" id="end-rule"></div>
+          <div class="tag" id="end-tag">every opportunity, <em>on time</em>.</div>
+          <div class="url" id="end-url">github.com/humoge7502/muhurat</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // S1 — typed hook (0–2.5)
+      const hook = document.querySelector("#hook");
+      hook.innerHTML = hook.innerHTML.replace(/([^<\n])(?![^<]*>)/g, '<span class="ch">$1</span>');
+      tl.set("#hook", { opacity: 1 }, 0.1);
+      tl.to("#hook .ch", { opacity: 1, duration: 0.02, stagger: 0.028, ease: "none" }, 0.15);
+      tl.to("#hook", { opacity: 0, y: -24, duration: 0.4, ease: "power2.in" }, 2.15);
+
+      // S2 — wordmark + tape (2.5–5)
+      tl.fromTo("#wm", { opacity: 0, scale: 1.18, filter: "blur(10px)" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.55, ease: "power4.out" }, 2.55);
+      tl.fromTo("#wm-sub", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 2.95);
+      tl.fromTo("#tape", { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 3.05);
+      tl.fromTo("#tape-inner", { x: 0 }, { x: -600, duration: 2.0, ease: "none" }, 3.1);
+      tl.to(".clip[data-start='2.5']", { opacity: 0, duration: 0.35, ease: "power2.in" }, 4.7);
+
+      // S3 — dashboard pan (5–9)
+      tl.fromTo("#s3-kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 5.1);
+      tl.fromTo("#s3-img", { y: 0, scale: 1.02 }, { y: -260, scale: 1.06, duration: 3.7, ease: "power1.inOut" }, 5.0);
+      tl.to(".clip[data-start='5']", { opacity: 0, duration: 0.4 }, 8.65);
+
+      // S4 — proof (9–12)
+      tl.fromTo(".proof .big", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power4.out" }, 9.15);
+      tl.fromTo(".proof .fine", { opacity: 0 }, { opacity: 1, duration: 0.45 }, 9.7);
+      tl.fromTo("#chips .chip", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.14, ease: "power3.out" }, 10.0);
+      tl.to(".clip[data-start='9']", { opacity: 0, duration: 0.35 }, 11.7);
+
+      // S5 — reminders (12–15)
+      tl.fromTo("#s5-kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 12.1);
+      tl.fromTo("#s5-img", { y: -120, scale: 1.03 }, { y: 60, scale: 1.0, duration: 2.7, ease: "power1.inOut" }, 12.0);
+      tl.to(".clip[data-start='12']", { opacity: 0, duration: 0.35 }, 14.7);
+
+      // S6 — end card (15–18)
+      tl.fromTo("#end-wm", { opacity: 0, scale: 1.2, filter: "blur(12px)" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.7, ease: "power4.out" }, 15.15);
+      tl.fromTo("#end-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 15.6);
+      tl.fromTo("#end-tag", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 15.75);
+      tl.fromTo("#end-url", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 16.1);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+You didn't miss the deadline. You just never saw it.
+
+Muhurat is a launch clock for student opportunities: real contests, hackathons
+and scholarships pulled live from public sources, ranked by the time you
+actually have — and turned into reminders that reach your phone (48h alarms
+via your own calendar, no account needed).
+
+Every item links to its source. Every fetch is snapshotted. Nothing simulated.
+
+  → github.com/humoge7502/muhurat
+
+18-second launch film rendered from the live product (Hyperframes composition
+in brag-output/composition/ — edit index.html and re-render with
+`npx hyperframes render`).
